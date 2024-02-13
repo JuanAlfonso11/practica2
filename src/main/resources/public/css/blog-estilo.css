@@ -1,0 +1,108 @@
+/* Reset de estilos para mejorar la consistencia entre navegadores */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f2f1;  /* Verde azulado claro */
+    color: #263238;  /* Azul grisáceo oscuro */
+    line-height: 1.6;
+}
+
+/* Encabezado y Barra de Navegación */
+header {
+    background-color: #004d40;  /* Verde oscuro */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #00796b;  /* Verde azulado */
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal para la sección de artículos */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Estilo de los artículos en la página principal */
+.article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article h2 {
+    color: #004d40;  /* Verde oscuro */
+}
+
+.article p {
+    color: #546e7a;  /* Azul grisáceo medio */
+}
+
+/* Pie de Página */
+footer {
+    background-color: #004d40;  /* Verde oscuro */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para la página de inicio de sesión */
+.login-container {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    background-color: #00796b;  /* Verde azulado */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #004d40;  /* Verde oscuro */
+}
+
+/* Estilos adicionales pueden agregarse

@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+mainClassName = 'org.example.Main'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation 'io.javalin:javalin:5.3.2'
+
+    implementation 'io.javalin:javalin-rendering:5.3.2'
+
+    implementation "org.slf4j:slf4j-simple:2.0.5"
+
+
+    implementation 'org.freemarker:freemarker:2.3.30'
+    implementation 'org.thymeleaf:thymeleaf:3.1.1.RELEASE'
+
+
+    implementation 'org.jsoup:jsoup:1.15.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+run{
+    standardInput = System.in
+}
