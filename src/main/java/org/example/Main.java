@@ -23,12 +23,13 @@ public class Main {
             });
 
         }).start(7000);
+        app.get("/",ctx->{
+            ctx.redirect("/templates/blog.html");
+        });
         new ControladorUsuario(app).rutas();
         new ControladorArticulos(app).rutas();
         new loginControler(app).rutas();
-        app.get("/",ctx->{
-            ctx.redirect("/blog");
-        });
+
         app.get("/noentocntrado",ctx->{
             ctx.render("/templates/404.html");
         });
