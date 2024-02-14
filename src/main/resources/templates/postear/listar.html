@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <!-- ... (metadatos y estilos) ... -->
-    <link rel="stylesheet" type="text/css" href="/css/blog-estilo.css">
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"> Listar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<h2 th:text="${titulo}"></h2>
-
-<!-- Enlace para crear un nuevo artículo -->
-<a th:href="@{/postear/crear}">Crear Nuevo Artículo</a>
-
-<!-- Tabla para listar artículos -->
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Título</th>
-        <th>Fecha Publicación</th>
-        <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- Iterar sobre la lista de artículos -->
-    <tr th:each="articulo : ${lista}">
-        <td th:text="${articulo.getId()}"></td>
-        <td th:text="${articulo.getTitulo()}"></td>
-        <td th:text="${#dates.format(articulo.getFechaPublicacion(), 'dd/MM/yyyy HH:mm')}"></td>
-        <td>
-            <!-- Enlace para editar con el ID del artículo -->
-            <a th:href="@{'/postear/editar/' + ${articulo.getId()}}">Editar</a>
-
-            <!-- Enlace para eliminar con el ID del artículo -->
-            <a th:href="@{'/postear/eliminar/' + ${articulo.getId()}}">Eliminar</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="dispaly-4" th:text="${titulo}">...</h1>
+        <p class="lead">Lista de publicaciones</p>
+    </div>
+    <a href="postear/crear" class="btn btn-primary">New Post</a>
+    <table class="table table-stiped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Cuerpo</th>
+            <th scope="col">Etiquetas</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="articulo : ${lista}">
+            <th scope="row">
+                <a th:text="${articulo.id}" th:href="'visualizar/'+${articulo.id}"/>
+            </th>
+            <td th:text="${articulo.autor.getNombre()}">Autor</td>
+            <td th:text="${articulo.titulo}">titulo</td>
+            <td th:text="${articulo.cuerpo}">cuerpo</td>
+            <td th:text="${articulo.showEtiquetas()}">Etiquetas</td>
+            <td th:text="${articulo.fechaFormateada()}">Fecha</td>
+            <td>
+                <a th:text="Editar" th:href="'editar/'+${articulo.id}" th class="btn btn-secondary btn-sm"/> |
+                <a th:text="Eliminar" th:href="'eliminar/'+${articulo.id}" th class="btn btn-danger btn-sm"/>
+            </td>
+        </tr>
+        </tbody>
+        </thead>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
 </body>
 </html>
