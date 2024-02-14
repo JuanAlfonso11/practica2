@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ... (metadatos y estilos) ... -->
+    <link rel="stylesheet" type="text/css" href="/css/blog-estilo.css">
+</head>
+<body>
+<h2 th:text="${titulo}"></h2>
+
+<!-- Enlace para crear un nuevo artículo -->
+<a th:href="@{/postear/crear}">Crear Nuevo Artículo</a>
+
+<!-- Tabla para listar artículos -->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Fecha Publicación</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterar sobre la lista de artículos -->
+    <tr th:each="articulo : ${lista}">
+        <td th:text="${articulo.getId()}"></td>
+        <td th:text="${articulo.getTitulo()}"></td>
+        <td th:text="${#dates.format(articulo.getFechaPublicacion(), 'dd/MM/yyyy HH:mm')}"></td>
+        <td>
+            <!-- Enlace para editar con el ID del artículo -->
+            <a th:href="@{'/postear/editar/' + ${articulo.getId()}}">Editar</a>
+
+            <!-- Enlace para eliminar con el ID del artículo -->
+            <a th:href="@{'/postear/eliminar/' + ${articulo.getId()}}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
