@@ -5,10 +5,49 @@
     <title>Blog post</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <style>
+        body {
+            padding-top: 56px; /* Adjusted for fixed navbar height */
+        }
+
+        .navbar {
+            background-color: #343a40; /* Dark background color */
+        }
+
+        .navbar-brand {
+            color: #ffffff; /* White text color */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff; /* White color for the icon */
+        }
+
+        .nav-link {
+            color: #ffffff !important; /* White text color */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Primary button color */
+            border-color: #007bff; /* Primary button border color */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            border-color: #0056b3; /* Darker border color on hover */
+        }
+
+        h2, p {
+            color: #343a40; /* Text color */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg fixed-top bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,31 +73,31 @@
 </nav>
 
 <!-- Contenido de la publicación -->
-<h2 th:text="${titulo}"></h2>
-<p th:text="${fecha}"></p>
-<p th:text="${autor}"></p>
-<p th:text="${cuerpo}"></p>
+<div class="container mt-5">
+    <h2 th:text="${titulo}"></h2>
+    <p th:text="${fecha}"></p>
+    <p th:text="${cuerpo}"></p>
 
-<!-- Lista de comentarios -->
-<ul>
-    <li th:each="comentario : ${lista}">
-        <p th:text="${comentario.getComentario}"></p>
-        <p th:text="${comentario.autor.nombre}"></p>
-        <p th:text="${comentario.fechaFormateada()}"></p>
-    </li>
-</ul>
+    <!-- Lista de comentarios -->
+    <ul>
+        <li th:each="comentario : ${lista}">
+            <p th:text="${comentario.getComentario}"></p>
+            <p th:text="${comentario.autor.nombre}"></p>
+            <p th:text="${comentario.fechaFormateada()}"></p>
+        </li>
+    </ul>
 
-<!-- Formulario para agregar comentario -->
-<form method="post" th:action="'/publicacion/' + ${articulo} + '/comment'">
-    <textarea name="texto" placeholder="Escribe tu comentario"></textarea>
-    <button type="submit">Comentar</button>
-</form>
+    <!-- Formulario para agregar comentario -->
+    <form method="post" th:action="'/publicacion/' + ${articulo} + '/comment'">
+        <textarea class="form-control" name="texto" placeholder="Escribe tu comentario"></textarea>
+        <button class="btn btn-primary mt-2" type="submit">Comentar</button>
+    </form>
 
-<!-- Enlace de inicio de sesión/cierre de sesión -->
-<a th:href="${sitio}" th:text="${tipo}"></a>
+    <!-- Enlace de inicio de sesión/cierre de sesión -->
+    <a th:href="${sitio}" th:text="${tipo}"></a>
 
-<!-- Condicional para mostrar contenido basado en la sesión -->
-
+    <!-- Condicional para mostrar contenido basado en la sesión -->
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
