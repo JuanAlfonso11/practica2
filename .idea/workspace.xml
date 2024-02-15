@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e0fd27e-f107-475d-b35d-8f8906aea7d7" name="Changes" comment="arreglo de ruteo compleo">
+    <list default="true" id="3e0fd27e-f107-475d-b35d-8f8906aea7d7" name="Changes" comment="arreglo de ruteo completo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postear/listar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postear/listar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/publicacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/publicacion.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707838934424</updated>
       <workItem from="1707838935531" duration="2000" />
-      <workItem from="1707927224399" duration="37799000" />
+      <workItem from="1707927224399" duration="38175000" />
     </task>
     <task id="LOCAL-00001" summary="casi todo el html">
       <option name="closed" value="true" />
@@ -198,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708022866512</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="arreglo de ruteo completo">
+      <option name="closed" value="true" />
+      <created>1708024968138</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708024968138</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +214,7 @@
     <MESSAGE value="otro push" />
     <MESSAGE value="manejador de usuarios" />
     <MESSAGE value="arreglo de ruteo compleo" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglo de ruteo compleo" />
+    <MESSAGE value="arreglo de ruteo completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglo de ruteo completo" />
   </component>
 </project>
