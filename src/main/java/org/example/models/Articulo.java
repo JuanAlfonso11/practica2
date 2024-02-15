@@ -32,8 +32,8 @@ public class Articulo {
         }
         return temp;
     }
-    public void agregarComentario(comentario coment){
-        listaComentarios.add(coment);
+    public void agregarComentario(comentario comment){
+        listaComentarios.add(comment);
     }
     public String getCuerpo70(){
         if (cuerpo.length() <= 70) {

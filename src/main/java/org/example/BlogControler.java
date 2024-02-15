@@ -10,9 +10,14 @@ public class BlogControler {
     private ArrayList<usuario> usuarios;
     private ArrayList<Articulo> articulos;
 
+
     private BlogControler() {
         usuarios = new ArrayList<>();
         articulos = new ArrayList<>();
+        crearAdmin();
+        crearPost();
+
+
     }
 
     public void actualizarArticulo(Articulo articuloActualizado) {
@@ -91,7 +96,7 @@ public class BlogControler {
 
     public void crearPost(){
         usuario user = buscarUsuarioByUserName("admin");
-        Articulo newArticulo = new Articulo(0,"Prueba","Hey chicos, sabian que en terminos de reproduccion entre hombres humanos y Pokemon hembras, Vaporeon es el Pokémon mas compatible para los Humanos?\n" +
+        Articulo newArticulo = new Articulo(1,"Prueba","Hey chicos, sabian que en terminos de reproduccion entre hombres humanos y Pokemon hembras, Vaporeon es el Pokémon mas compatible para los Humanos?\n" +
                 "\n" +
                 "No solo porque estan en el Grupo Huevo Campo, que esta principalmente conformado por Mamiferos, Vaporeon tiene en promedio una medida de 91.44 Cm. de altura y un peso de 28,98 Kg., esto significa que son suficientemente grandes para soportar penes humanos, y con sus impresionantes Estadisticas Base de PS y acceso a Armadura Acida, puedes ser duro con ella. Debido a su biologia mayoritariamente compuesta de agua, no hay dudas de que una Vaporeon excitada sería increiblemente humeda, tan humeda que podrias facilmente tener sexo con una por horas sin lastimarte o sentir dolor.\n" +
                 "\n" +
@@ -156,6 +161,7 @@ public class BlogControler {
     public void setArticulos(ArrayList<Articulo> articulos) {
         this.articulos = articulos;
     }
+
 
 
 
