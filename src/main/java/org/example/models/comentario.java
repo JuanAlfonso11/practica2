@@ -1,13 +1,20 @@
 package org.example.models;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
-public class comentario {
 
+@Entity
+@Table(name = "comentario")
+public class comentario {
+    @Id
     private long id;
     private String comentario;
+    @ManyToOne
     private usuario autor;
     private Date fecha;
+    @ManyToOne
     private Articulo articulo;
 
     public comentario(long id, String comentario, usuario autor, Articulo articulo) {
@@ -17,6 +24,11 @@ public class comentario {
         this.articulo = articulo;
         this.fecha = new Date();
     }
+
+    public comentario() {
+
+    }
+
     public String fechaFormateada(){
         SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
         String fechaFormateada = formateador.format(fecha);
@@ -34,7 +46,7 @@ public class comentario {
     public void setId(long id) {
         this.id = id;
     }
-    public String getComentario() {
+    public String getComentario(String comentarioTexto) {
         return comentario;
     }
     public void setComentario(String comentario) {

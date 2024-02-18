@@ -31,6 +31,16 @@ public class BlogControler {
 
         }
     }
+    public void actualizarUsuario(usuario usuarioActualizado) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            usuario usuario = usuarios.get(i);
+            if (usuario.getUsername().equals(usuarioActualizado.getUsername())) {
+                usuarios.set(i, usuarioActualizado);
+                break;
+            }
+
+        }
+    }
 
     public void eliminarArticuloById(Long id) {
         Iterator<Articulo> iterator = articulos.iterator();
@@ -107,7 +117,7 @@ public class BlogControler {
                 "Vaporeon está literalmente hecha para el pene humano. Asombrosas Estadisticas de Defensa+Alta cantidad de PS+Armadura Acida significa que puede recibir verga todo el dia, de todas las formas y tamanos, y aun así venir por mas.",user);
         Etiqueta nuevaEtiquta = new Etiqueta(1,"Prueba");
         newArticulo.addEtiqueta(nuevaEtiquta);
-        comentario newComentario = new comentario(0,"Prueba",user,newArticulo);
+        comentario newComentario = new comentario(0,"Pruebafhdsfhdsjsdkfhsdkjfhdskjfhdskjfhkdsjkjdshfkjsdfhkjdshfkjsdhfkjdshfk",user,newArticulo);
         newArticulo.addComentario(newComentario);
         articulos.add(newArticulo);
     }

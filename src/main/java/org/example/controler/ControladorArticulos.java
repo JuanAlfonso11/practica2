@@ -5,6 +5,7 @@ import org.example.models.Etiqueta;
 import org.example.models.usuario;
 import org.example.models.comentario;
 import io.javalin.Javalin;
+import servicios.ArticuloServices;
 
 import java.util.*;
 import java.text.SimpleDateFormat;
@@ -72,6 +73,7 @@ public class ControladorArticulos {
                     Articulo temp = new Articulo(Long.parseLong(ctx.formParam("dart")), ctx.formParam("titulo"), ctx.formParam("cuerpo"), user);
                     temp.setListaEtiquetas(etiquetas);
                     BlogControler.getInstance().insertarArticulo(temp);
+                    ArticuloServices.getInstance().addArticulo(temp,user);
                     ctx.redirect("/postear");
                 });
                 get("/eliminar/{articuloid}",ctx->{
